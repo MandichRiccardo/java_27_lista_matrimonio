@@ -23,7 +23,7 @@ public class Invitato{
         this.cognome = getString();
         System.out.println("inserisci l'indirizzo di " + nome);
         this.indirizzo = getString();
-        System.out.println(nome + "è stato invitato dalla sposo?");
+        System.out.println(nome + " è stato invitato dallo sposo?");
         this.sposo = getBoolean();
     }
 
@@ -42,6 +42,16 @@ public class Invitato{
             System.out.println("devi inserire un booleano nel formato \"true\" o \"false\"");
             return getBoolean();
         }
+    }
+
+    public String toString(){
+        String info = "";
+        info += "\t\t\tnome:\t\t" + nome + "\n";
+        info += "\t\t\tcognome:\t" + cognome + "\n";
+        info += "\t\t\tindirizzo:\t" + indirizzo + "\n";
+        if(sposo) info += "\t\t\tè stato invitato dallo sposo\n";
+        else info += "\t\t\tè stato invitato dalla sposa\n";
+        return info;
     }
 
     public boolean equals(Invitato i){

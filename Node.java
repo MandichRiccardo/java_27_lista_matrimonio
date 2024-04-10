@@ -16,6 +16,11 @@ public class Node{
         return next;
     }
 
+    public Node getLastNode(){
+        if(next == null) return this;
+        else return next.getLastNode();
+    }
+
     @Override
     public String toString() {
         String info ="";

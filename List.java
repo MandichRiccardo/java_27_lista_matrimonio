@@ -88,6 +88,13 @@ public class List {
     }
 
     public void smista(List sposo, List sposa){
-
+        while(start != null){
+            Node n = start.getLastNode();
+            removeNode(n);
+            if(n.invitedByBridegroom()) sposo.addNode(n);
+            else sposa.addNode(n);
+        }
+        sposa.order();
+        sposo.order();
     }
 }
